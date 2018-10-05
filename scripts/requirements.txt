@@ -1,4 +1,0 @@
-crcmod
-cryptography >= 2.3
-hidapi
-google-cloud-pubsub
