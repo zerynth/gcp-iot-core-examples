@@ -38,7 +38,7 @@ Zerynth Python binary called ZERYNTH_PYTHON henceforth.
 
 1. Register and virtualize the device.
 2. Run ```ztc device discover --matchdb``` to retrieve the device uid.
-3. Run ```ztc device alias put RETRIEVEDUID gcp_board USEDDEVICE```, where ```USEDDEVICE``` can be one of ```xplained_samg55```, ```xplained_samd21```, ```arduino_mkr1000```,  to assign the alias ```gcp_board``` to the device (```--classname ArduinoMKR1000``` is also needed for ```arduino_mkr1000``` target).
+3. Run ```ztc device alias put RETRIEVEDUID gcp_board USEDDEVICE```, where ```USEDDEVICE``` can be one of ```xplained_samg55```, ```xplained_d21```, ```arduino_mkr1000```,  to assign the alias ```gcp_board``` to the device (```--classname ArduinoMKR1000``` is also needed for ```arduino_mkr1000``` target).
 4. Run ```ztc provisioning uplink-config-firmware gcp_board --i2caddr 0x0``` to prepare the device for provisioning.
 5. Run ```ztc provisioning crypto-scan gcp_board -o .``` to obtain address and type of the crypto element (stored to configure the application).
 6. Run ```ztc provisioning write-config gcp_board configuration.bin --lock True``` to write desired configuration to the device. **This command LOCKS the crypto element and sets the address to 0x58, this procedure is IRREVERSIBLE**
