@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 # @Author: Lorenzo
 # @Date:   2017-10-03 10:56:02
-# @Last Modified by:   Lorenzo
-# @Last Modified time: 2018-10-05 15:49:16
+# @Last Modified by:   l.rizzello
+# @Last Modified time: 2019-03-15 09:26:13
 
 import json
 import socket
@@ -20,12 +20,12 @@ def load_device_conf():
     return json.loads(conf)
 
 def get_timestamp():
-    ip = __default_net["sock"][0].gethostbyname("now.httpbin.org")
+    ip = __default_net["sock"][0].gethostbyname("now.zerynth.com")
     sock=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
     sock.connect((ip, 80))
 
     req = (b"GET / HTTP/1.1\r\n"
-           b"Host: now.httpbin.org\r\n" 
+           b"Host: now.zerynth.com\r\n" 
            b"User-Agent: curl/7.57.0\r\n"
            b"Accept: */*\r\n"
            b"\r\n")
